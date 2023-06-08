@@ -6,24 +6,47 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/f9e80abfb4.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
+      <nav>
+        <div>
+          <a href="/"><span>Bookers</span></a>
+        </div>
+      </nav>
       <% if user_signed_in? %>
       <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to "Home", root_path %>
       </li>
-      <% else %>
+      <li>Users</li>
+      <li>Books</li>
       <li>
-        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Home", root_path %>
       </li>
       <li>
-        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "About", about_path %>
+      </li>
+      <li>
+        <%= link_to "Sign up", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log in", new_user_session_path %>
       </li>
     <% end %>
+    </header>
+    <main>
     <%= yield %>
+    </main>
+    <footer><p>
+      CopyRight Infratpo.inc
+    </p></footer>
   </body>
 </html>
