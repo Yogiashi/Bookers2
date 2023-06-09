@@ -1,20 +1,26 @@
-<!--部分テンプレート-->
-<%= render 'books/user_info', book: @user_info %>
-
-<div>
-  <h2>Books</h2>
-  <table>
-    <tr>
-      <th></th>
-      <th>Tilte</th>
-      <th>Opinion</th>
-    </tr>
-    <% @book.each do |book| %>
-    <tr>
-      <td><%= image_tag @user.get_profile_image(80, 80) %></td>
-      <td><%= link_to book.title, book_path(book) %></td>
-      <td><%= book.body %></td>
-    </tr>
-    <% end %>
-  </table>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <!--ここから部分テンプレート-->
+      <%= render 'books/user_info', book: @user_info %>
+      <!--ここまで部分テンプレート-->
+    </div>
+    <div class="col-lg-8">
+      <h2>Books</h2>
+      <table class="table table-striped">
+        <tr>
+          <th></th>
+          <th>Tilte</th>
+          <th>Opinion</th>
+        </tr>
+        <% @book.each do |book| %>
+        <tr>
+          <td><%= image_tag @user.get_profile_image(80, 80) %></td>
+          <td><%= link_to book.title, book_path(book) %></td>
+          <td><%= book.body %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
