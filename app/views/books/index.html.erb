@@ -1,7 +1,5 @@
-
-
-
-<!--部分テンプレート-->
+<!--ここから部分テンプレート-->
+<div>
 <h2>User info</h2>
 
 
@@ -15,9 +13,9 @@
     <td>book.introduction</td>
   </tr>
 </table>
-
-
+</div>
 <!--投稿フォーム-->
+<div>
 <h2>New Book</h2>
 
 <%= form_with model: @book do |f| %>
@@ -34,8 +32,11 @@
 
 <%= f.submit 'Create Book' %>
 <% end %>
-<!--部分テンプレート-->
+</div>
+<!--ここまで部分テンプレート-->
 
+<div>
+<h2>Books</h2>
 <table>
   <tr>
     <th></th>
@@ -50,3 +51,4 @@
     </tr>
   <% end %>
 </table>
+</div>

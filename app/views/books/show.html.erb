@@ -1,1 +1,12 @@
 <h2>Book detail</h2>
+
+<table>
+  <tr>
+    <td></td>
+    <td><%= image_tag @book.user.get_profile_image(80, 80) %><br><%= link_to @book.user.name, books_path %></td>
+    <td><%= @book.title %></td>
+    <td><%= @book.body %></td>
+    <td><%= link_to "Edit", edit_book_path(@book) %></td>
+    <td><%= link_to "Dstroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？"%><td>
+  </tr>
+</table>
