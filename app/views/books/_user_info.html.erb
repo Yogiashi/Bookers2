@@ -1,42 +1,22 @@
-<!--部分テンプレート-->
-<div>
-  <div>
-  <h2>User info</h2>
-  <%= image_tag current_user.get_profile_image(80, 80) %>
-  
-  <table>
-    <tr>
-      <th><%= "name" %></th>
-      <td><%= current_user.name %></td>
-    </tr>
-    <tr>
-      <th><%= "introduction" %></th>
-      <td><%= current_user.introduction %></td>
-    </tr>
-  </table>
-  </div>
-  
-  <%= link_to edit_user_path(current_user.id), class: "btn btn-secondary" do %>
-  <i class="fas fa-user-cog"></i>
-  <% end %>
+<!--ここから部分テンプレート-->
+<h1>User info</h1>
 
-  <!--投稿フォーム-->
-  <div>
-  <h2>New Book</h2>
-  
-  <%= form_with model: book do |f| %>
-  
-  <div>
-  <%= f.label :Title %><br>
-  <%= f.text_field :title %>
-  </div>
-  
-  <div>
-  <%= f.label :Opinion %><br>
-  <%= f.text_area :body %>
-  </div>
-  
-  <%= f.submit 'Create Book' %>
-  <% end %>
-  </div>
-</div>
+ <%= image_tag current_user.get_profile_image(80, 80) %>
+ <table>
+  <tr>
+    <th><%= "name" %></th>
+    <td><%= current_user.name %></td>
+  </tr>
+  <tr>
+    <th><%= "introduction" %></th>
+    <td><%= current_user.introduction %></td>
+  </tr>
+</table>
+
+<%= link_to edit_user_path(current_user.id), class: "btn btn-secondary" do %>
+<i class="fas fa-user-cog"></i>
+<% end %>
+ 
+
+
+<!--ここまで部分テンプレート-->
