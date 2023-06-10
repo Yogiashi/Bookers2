@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-lg-4">
       <!--ここから部分テンプレート-->
-      <%=render 'books/user_info', book: @info %>
+      <%= render 'books/user_info', user: @user %>
+      <%= render 'books/new_book', book: @book %>
       <!--ここまで部分テンプレート-->
     </div>
       

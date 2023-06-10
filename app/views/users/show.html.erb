@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-lg-4">
       <!--ここから部分テンプレート-->
-      <%=render 'books/user_info', book: @info %>
+      <%=render 'books/user_info', user: @user %>
+      <%=render 'books/new_book', book: @book %>
       <!--ここまで部分テンプレート-->
     </div>
     <div class="col-lg-8">
@@ -13,7 +14,7 @@
                 <th>Tilte</th>
                 <th>Opinion</th>
               </tr>
-              <% @book.each do |book| %>
+              <% @books.each do |book| %>
               <tr>
                 <td><%= image_tag @user.get_profile_image(80, 80) %></td>
                 <td><%= link_to book.title, book_path(book) %></td>
