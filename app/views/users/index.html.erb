@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-4">
       <!--ここから部分テンプレート-->
       <%= render 'books/user_info', user: @user %>
       <%= render 'books/new_book', book: @book %>
       <!--ここまで部分テンプレート-->
     </div>
-      
-    <div class="col-lg-8">
+
+    <div class="col-md-8">
       <h2>Users</h2>
           <table class="table table-stripes">
             <tr>
@@ -15,13 +15,13 @@
               <th>name</th>
               <th></th>
             </tr>
-          
+
           <% @users.each do |user| %>
-          
+
             <tr>
               <td><%= image_tag user.get_profile_image(80, 80) %></td>
               <td><%= user.name %></td>
-              <td><%= link_to "show", user_path(user.id) %></td>
+              <td><%= link_to "show", user_path(user) %></td>
             </tr>
             <% end %>
     </table>

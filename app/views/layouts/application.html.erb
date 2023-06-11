@@ -47,7 +47,6 @@
             </div>
           </div>
           <% else %>
-          <div class="justify-content-end">
             <ul class="navbar-nav">
               <li>
                 <%= link_to root_path, class: "text-white m-2" do %>
@@ -74,7 +73,6 @@
                 <% end %>
               </li>
             </ul>
-          </div>
           <% end %>
         </div>
       </nav>
@@ -83,7 +81,7 @@
     <%= yield %>
     </main>
     <footer>
-    <div class="text-center">
+    <div class="text-center mt-5">
       CopyRight Infratpo.inc
     </div>
     </footer>
