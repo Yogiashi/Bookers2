@@ -1,17 +1,10 @@
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this obj from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 <div class="container">
   <div class="row">
     <div class="col-md-3">
+      <%= render 'layouts/error', obj: @book %>
       <!--ここから部分テンプレート-->
-      <%=render 'user_info', user: @user %>
-      <%=render 'new_book', book: @book %>
+      <%=render 'users/info', user: current_user %>
+      <%=render 'form', book: @book %>
       <!--ここまで部分テンプレート-->
       </div>
       <div class="col-md-8 offset-md-1">
@@ -30,7 +23,7 @@
           <%= image_tag book.user.get_profile_image(80, 80) %>
           <% end %>
           </td> 
-          <td><%= link_to book.title, book_path(book.id) %></td>
+          <td><%= link_to book.title, book_path(book) %></td>
           <td><%= book.body %></td>
         </tr>
         <% end %>
